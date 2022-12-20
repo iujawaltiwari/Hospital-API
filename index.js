@@ -2,13 +2,15 @@
 const express = require('express');
 const port = 8000;
 const app = express();
+const db = require('./config/mongoose');
 
 
 
 
 
 
-
+//loading the router
+app.use('/', require('./routes/index'));
 
 // app.get('/', function(req,res){
 //     res.send('<h1>Cool Go</h1>')
