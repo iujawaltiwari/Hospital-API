@@ -10,8 +10,14 @@
   "author": "Ujawal Tiwari",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
     "mongoose": "^6.8.1",
-    "nodemon": "^2.0.20"
+    "nodemon": "^2.0.20",
+    "passport": "^0.6.0",
+    "passport-jwt": "^4.0.1",
+    "swagger-ui-express": "^4.6.0",
+    "yamljs": "^0.3.0"
   }
 }
