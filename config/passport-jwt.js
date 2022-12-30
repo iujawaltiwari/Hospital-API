@@ -6,10 +6,12 @@ const ExtractJWT = require('passport-jwt').ExtractJwt;
 const Doctor = require('../models/doctor');
 
 let opts = {
-  jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken(),
+  jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken,
+  secretOrKey: 'Hospital-API'
 //   secretOrKey: process.env.SECRET_KEY
-}
 
+}
+ 
 passport.use(new JWTStrategy(opts, function(jwtpayload, done){
 
   Doctor.findById(jwtpayload._id, function(err, user){
@@ -20,9 +22,9 @@ passport.use(new JWTStrategy(opts, function(jwtpayload, done){
     }else{
       return done(null, false);
     }
-  })
+  });
 
-}))
+}));
 
 
 module.exports = passport;
