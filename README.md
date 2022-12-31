@@ -14,14 +14,21 @@ already exists, just return the the patient info in the API)
 
 [Documentation](docs of that hosted platform)
 
-Routes:
+# Routes:
 
 ![image](https://github.com/ujawaltiwariG/Hospital-API/blob/master/images/routes.png?raw=true)
 
 
-Screenshots:
+# Screenshots:
 
+# Doctor Register:
 ![image](https://github.com/ujawaltiwariG/Hospital-API/blob/master/images/doctorreg.png?raw=true)
+
+# Doctor Login:
 ![image](https://github.com/ujawaltiwariG/Hospital-API/blob/master/images/signin.png?raw=true)
+
+# Patient Register:
 ![image](https://github.com/ujawaltiwariG/Hospital-API/blob/master/images/patientreg.png?raw=true)
+
+# Patient Reports:
 ![image](https://github.com/ujawaltiwariG/Hospital-API/blob/master/images/reports.png?raw=true)
