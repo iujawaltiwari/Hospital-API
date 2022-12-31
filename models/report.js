@@ -1,28 +1,28 @@
-const passport = require('passport');
-const JWTStrategy = require('passport-jwt').Strategy;
-const ExtractJWT = require('passport-jwt').ExtractJwt;
+const mongoose = require('mongoose');
+
+//report schema
+const reportSchema = new mongoose.Schema({
+  doctor:{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Doctor'
+  },
+  patient:{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Patient'
+  },
+  status:{
+    type: String,
+    required: true
+  },
+  date:{
+    type: String,
+    required: true
+  }
+},{
+  timestamps: true
+});
 
 
-const Doctor = require('../models/doctor');
-
-let opts = {
-  jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken(),
-  secretOrKey: process.env.SECRET_KEY
-}
-
-passport.use(new JWTStrategy(opts, function(jwtpayload, done){
-
-  Doctor.findById(jwtpayload._id, function(err, user){
-    if(err){console.log('Error in finding user from JWT'); return}
-
-    if(user){
-      return done(null, user);
-    }else{
-      return done(null, false);
-    }
-  })
-
-}))
-
-
-module.exports = passport;
+//export reports
+const Report = mongoose.model('Report', reportSchema);
+module.exports = Report;

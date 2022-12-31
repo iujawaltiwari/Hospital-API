@@ -59,7 +59,7 @@ module.exports.createSession = async (req, res) => {
       doctorID:  doctor._id,
       Name: doctor.name,
       data:{
-        token: jwt.sign(doctor.toJSON(), process.env.SECRET_KEY , {expiresIn: '500000',})
+        token: jwt.sign(doctor.toJSON(), 'Hospital-API', {expiresIn: '500000',})
       }
     });
 
